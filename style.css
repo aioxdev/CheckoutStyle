@@ -299,3 +299,29 @@
         0 0 0 2px var(--fs-ds-neutral-10),
         0 0 0 4px var(--fs-ds-theme-primary-accent-color);
 }
+
+/* Scrollbar styling */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--fs-ds-theme-scrollbar-thumb-background) var(--fs-ds-theme-scrollbar-background);
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--fs-ds-theme-scrollbar-background);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--fs-ds-theme-scrollbar-thumb-background);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--fs-ds-theme-scrollbar-thumb-background-active);
+}
