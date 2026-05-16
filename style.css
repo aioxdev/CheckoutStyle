@@ -1,189 +1,301 @@
+/* ============================================================
+   FREEMIUS PREMIUM DARK CHECKOUT
+   Inspired by Stripe · Linear · Vercel · Apple
+   Design system: refined neutrals + single indigo accent
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap');
+
 :root {
-    --fs-ds-freemius-scale: #6753ff;
-    --fs-ds-freemius-grow: #902af5;
-    --fs-ds-freemius-launch: #e62a97;
-    --fs-ds-blue-10: #e6f6ff;
-    --fs-ds-blue-100: #bae3ff;
-    --fs-ds-blue-200: #7cc4fa;
-    --fs-ds-blue-300: #47a3f3;
-    --fs-ds-blue-400: #2186eb;
-    --fs-ds-blue-500: #0967d2;
-    --fs-ds-blue-600: #0552b5;
-    --fs-ds-blue-700: #03449e;
-    --fs-ds-blue-800: #01337d;
-    --fs-ds-blue-900: #002159;
-    --fs-ds-neutral-10: #f5f7fa;
-    --fs-ds-neutral-100: #e4e7eb;
-    --fs-ds-neutral-200: #cbd2d9;
-    --fs-ds-neutral-300: #9aa5b1;
-    --fs-ds-neutral-400: #7b8794;
-    --fs-ds-neutral-500: #616e7c;
-    --fs-ds-neutral-600: #52606d;
-    --fs-ds-neutral-700: #3e4c59;
-    --fs-ds-neutral-800: #323f4b;
-    --fs-ds-neutral-900: #1f2933;
-    --fs-ds-neutral-900-fade-60: rgba(31, 41, 51, .6);
-    --fs-ds-neutral-900-fade-92: rgba(31, 41, 51, .08);
-    --fs-ds-green-10: #e3f9e5;
-    --fs-ds-green-100: #c1f2c7;
-    --fs-ds-green-200: #91e697;
-    --fs-ds-green-300: #51ca58;
-    --fs-ds-green-400: #31b237;
-    --fs-ds-green-500: #18981d;
-    --fs-ds-green-600: #0f8613;
-    --fs-ds-green-700: #0e7817;
-    --fs-ds-green-800: #07600e;
-    --fs-ds-green-900: #014807;
-    --fs-ds-red-10: #ffe3e3;
-    --fs-ds-red-100: #ffbdbd;
-    --fs-ds-red-200: #ff9b9b;
-    --fs-ds-red-300: #f86a6a;
-    --fs-ds-red-400: #ef4e4e;
-    --fs-ds-red-500: #e12d39;
-    --fs-ds-red-600: #cf1124;
-    --fs-ds-red-700: #ab091e;
-    --fs-ds-red-800: #8a041a;
-    --fs-ds-red-900: #610316;
-    --fs-ds-yellow-10: #fffbea;
-    --fs-ds-yellow-100: #fff3c4;
-    --fs-ds-yellow-200: #fce588;
-    --fs-ds-yellow-300: #fadb5f;
-    --fs-ds-yellow-400: #f7c948;
-    --fs-ds-yellow-500: #f0b429;
-    --fs-ds-yellow-600: #de911d;
-    --fs-ds-yellow-700: #cb6e17;
-    --fs-ds-yellow-800: #b44d12;
-    --fs-ds-yellow-900: #8d2b0b;
-    --fs-ds-white-10: #fff;
-    --fs-ds-typography-font-base: "Source Sans 3", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    --fs-ds-typography-font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --fs-ds-typography-font-size-base: 14px;
-    --fs-ds-typography-font-size: 1rem;
-    --fs-ds-typography-font-size-xs: 0.7142857143rem;
-    --fs-ds-typography-font-size-sm: 0.8571428571rem;
-    --fs-ds-typography-font-size-md: 1.1428571429rem;
-    --fs-ds-typography-font-size-lg: 1.2857142857rem;
-    --fs-ds-typography-font-size-xl: 1.4285714286rem;
-    --fs-ds-typography-font-size-2xl: 2.2857142857rem;
-    --fs-ds-typography-font-size-3xl: 2.5714285714rem;
-    --fs-ds-typography-font-weight-thin: 200;
+    /* ── Brand gradient nodes ───────────────────────────────── */
+    --fs-ds-freemius-scale:  #818cf8;   /* indigo-400 – primary accent */
+    --fs-ds-freemius-grow:   #a78bfa;   /* violet-400  */
+    --fs-ds-freemius-launch: #f472b6;   /* pink-400    */
+
+    /* ── Blue scale (accent) ────────────────────────────────── */
+    --fs-ds-blue-10:  #0f1729;
+    --fs-ds-blue-100: #1a2340;
+    --fs-ds-blue-200: #1e3a5f;
+    --fs-ds-blue-300: #3b5fc0;
+    --fs-ds-blue-400: #4f6fe8;
+    --fs-ds-blue-500: #6366f1;   /* primary – indigo-500 */
+    --fs-ds-blue-600: #818cf8;   /* lighter for dark bg hover */
+    --fs-ds-blue-700: #a5b4fc;
+    --fs-ds-blue-800: #c7d2fe;
+    --fs-ds-blue-900: #e0e7ff;
+
+    /* ── Neutral scale (dark) ───────────────────────────────── */
+    --fs-ds-neutral-10:  #0a0a0b;   /* near-black canvas         */
+    --fs-ds-neutral-100: #111113;   /* card surface              */
+    --fs-ds-neutral-200: #18181b;   /* elevated card             */
+    --fs-ds-neutral-300: #27272a;   /* border / divider          */
+    --fs-ds-neutral-400: #3f3f46;   /* muted border              */
+    --fs-ds-neutral-500: #52525b;   /* disabled / placeholder    */
+    --fs-ds-neutral-600: #71717a;   /* muted text                */
+    --fs-ds-neutral-700: #a1a1aa;   /* secondary text            */
+    --fs-ds-neutral-800: #d4d4d8;   /* primary text soft         */
+    --fs-ds-neutral-900: #f4f4f5;   /* primary text              */
+    --fs-ds-neutral-900-fade-60: rgba(244, 244, 245, .06);
+    --fs-ds-neutral-900-fade-92: rgba(0, 0, 0, .55);
+
+    /* ── Semantic colors ────────────────────────────────────── */
+    --fs-ds-green-10:  #052e16;
+    --fs-ds-green-100: #14532d;
+    --fs-ds-green-200: #166534;
+    --fs-ds-green-300: #15803d;
+    --fs-ds-green-400: #16a34a;
+    --fs-ds-green-500: #22c55e;
+    --fs-ds-green-600: #4ade80;
+    --fs-ds-green-700: #86efac;
+    --fs-ds-green-800: #bbf7d0;
+    --fs-ds-green-900: #dcfce7;
+
+    --fs-ds-red-10:  #1c0a0a;
+    --fs-ds-red-100: #3b0d0d;
+    --fs-ds-red-200: #5c1515;
+    --fs-ds-red-300: #7f1d1d;
+    --fs-ds-red-400: #b91c1c;
+    --fs-ds-red-500: #ef4444;
+    --fs-ds-red-600: #f87171;
+    --fs-ds-red-700: #fca5a5;
+    --fs-ds-red-800: #fecaca;
+    --fs-ds-red-900: #fee2e2;
+
+    --fs-ds-yellow-10:  #1c1500;
+    --fs-ds-yellow-100: #362600;
+    --fs-ds-yellow-200: #5c3f00;
+    --fs-ds-yellow-300: #854d0e;
+    --fs-ds-yellow-400: #a16207;
+    --fs-ds-yellow-500: #eab308;
+    --fs-ds-yellow-600: #facc15;
+    --fs-ds-yellow-700: #fde047;
+    --fs-ds-yellow-800: #fef08a;
+    --fs-ds-yellow-900: #fefce8;
+
+    --fs-ds-white-10: #ffffff;
+
+    /* ── Typography ─────────────────────────────────────────── */
+    --fs-ds-typography-font-base:
+        "Geist", ui-sans-serif, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", system-ui, sans-serif;
+    --fs-ds-typography-font-mono:
+        "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+        Consolas, "Liberation Mono", monospace;
+
+    --fs-ds-typography-font-size-base:     13px;
+    --fs-ds-typography-font-size:          1rem;
+    --fs-ds-typography-font-size-xs:       0.6923076923rem;   /* 9px  */
+    --fs-ds-typography-font-size-sm:       0.8461538462rem;   /* 11px */
+    --fs-ds-typography-font-size-md:       1.0769230769rem;   /* 14px */
+    --fs-ds-typography-font-size-lg:       1.2307692308rem;   /* 16px */
+    --fs-ds-typography-font-size-xl:       1.5384615385rem;   /* 20px */
+    --fs-ds-typography-font-size-2xl:      2.0769230769rem;   /* 27px */
+    --fs-ds-typography-font-size-3xl:      2.4615384615rem;   /* 32px */
+
+    --fs-ds-typography-font-weight-thin:    300;
     --fs-ds-typography-font-weight-regular: 400;
-    --fs-ds-typography-font-weight-bold: 600;
-    --fs-ds-typography-line-height-regular: 1.5;
-    --fs-ds-typography-line-height-dense: 1.2;
-    --fs-ds-appearance-gutter: 20px;
-    --fs-ds-appearance-gutter-half: 10px;
-    --fs-ds-appearance-gutter-quarter: 5px;
-    --fs-ds-appearance-gutter-three-quarter: 15px;
-    --fs-ds-appearance-gutter-one-and-half: 30px;
-    --fs-ds-appearance-gutter-2x: 40px;
-    --fs-ds-appearance-border-radius: 6px;
-    --fs-ds-appearance-border-radius-sm: 4px;
-    --fs-ds-appearance-border-radius-lg: 12px;
-    --fs-ds-appearance-control-height-xs: 24px;
-    --fs-ds-appearance-control-height-sm: 30px;
-    --fs-ds-appearance-control-height: 38px;
-    --fs-ds-appearance-control-height-lg: 48px;
+    --fs-ds-typography-font-weight-bold:    600;
+
+    --fs-ds-typography-line-height-regular: 1.6;
+    --fs-ds-typography-line-height-dense:   1.25;
+
+    /* ── Spacing ─────────────────────────────────────────────── */
+    --fs-ds-appearance-gutter:                 24px;
+    --fs-ds-appearance-gutter-quarter:          6px;
+    --fs-ds-appearance-gutter-half:            12px;
+    --fs-ds-appearance-gutter-three-quarter:   18px;
+    --fs-ds-appearance-gutter-one-and-half:    36px;
+    --fs-ds-appearance-gutter-2x:             48px;
+
+    /* ── Geometry ────────────────────────────────────────────── */
+    --fs-ds-appearance-border-radius:    8px;
+    --fs-ds-appearance-border-radius-sm: 5px;
+    --fs-ds-appearance-border-radius-lg: 14px;
+
+    /* ── Control heights ─────────────────────────────────────── */
+    --fs-ds-appearance-control-height-xs:    26px;
+    --fs-ds-appearance-control-height-sm:    32px;
+    --fs-ds-appearance-control-height:       40px;
+    --fs-ds-appearance-control-height-lg:    52px;
     --fs-ds-appearance-control-height-radio: 18px;
+
+    /* ── Motion ──────────────────────────────────────────────── */
     --fs-ds-appearance-section-animation-max-height: 1500px;
-    --fs-ds-appearance-section-animation-duration: 500ms;
-    --fs-ds-appearance-footer-min-height: 50px;
-    --fs-ds-appearance-checkout-vertical-gutter: 50px;
-    --fs-ds-appearance-product-image-size: 62px;
-    --fs-ds-appearance-product-image-size-sm: 48px;
-    --fs-ds-appearance-signal-bar-height: 24px;
+    --fs-ds-appearance-section-animation-duration:   400ms;
+
+    /* ── Layout ──────────────────────────────────────────────── */
+    --fs-ds-appearance-footer-min-height:         54px;
+    --fs-ds-appearance-checkout-vertical-gutter:  56px;
+    --fs-ds-appearance-product-image-size:        60px;
+    --fs-ds-appearance-product-image-size-sm:     44px;
+    --fs-ds-appearance-signal-bar-height:         28px;
     --fs-ds-appearance-signal-bar-button-icon-size: 8px;
-    --fs-ds-appearance-signal-bar-button-size: 14px;
-    --fs-ds-appearance-scrollbar-size: 8px;
-    --fs-ds-theme-primary-accent-color: var(--fs-ds-blue-500);
+    --fs-ds-appearance-signal-bar-button-size:    16px;
+    --fs-ds-appearance-scrollbar-size:             5px;
+
+    /* ════════════════════════════════════════════════════════
+       THEME TOKENS  (everything below references the raw
+       scale tokens above – only touch these for theming)
+       ════════════════════════════════════════════════════════ */
+
+    /* Accent */
+    --fs-ds-theme-primary-accent-color:       var(--fs-ds-blue-500);
     --fs-ds-theme-primary-accent-color-hover: var(--fs-ds-blue-600);
-    --fs-ds-theme-primary-green-color: var(--fs-ds-green-500);
-    --fs-ds-theme-primary-red-color: var(--fs-ds-red-600);
-    --fs-ds-theme-primary-yellow-color: var(--fs-ds-yellow-500);
-    --fs-ds-theme-error-color: var(--fs-ds-theme-primary-red-color);
-    --fs-ds-theme-success-color: var(--fs-ds-theme-primary-green-color);
-    --fs-ds-theme-warn-color: var(--fs-ds-theme-primary-yellow-color);
-    --fs-ds-theme-freemius-scale: var(--fs-ds-freemius-scale);
-    --fs-ds-theme-freemius-grow: var(--fs-ds-freemius-grow);
-    --fs-ds-theme-freemius-launch: var(--fs-ds-freemius-launch);
-    --fs-ds-theme-background-color: var(--fs-ds-white-10);
-    --fs-ds-theme-background-shade: var(--fs-ds-neutral-10);
-    --fs-ds-theme-background-accented: var(--fs-ds-neutral-100);
-    --fs-ds-theme-background-overlay: var(--fs-ds-neutral-900-fade-60);
-    --fs-ds-theme-background-dark: var(--fs-ds-neutral-800);
-    --fs-ds-theme-background-darkest: var(--fs-ds-neutral-900);
-    --fs-ds-theme-text-color: var(--fs-ds-neutral-900);
-    --fs-ds-theme-heading-text-color: var(--fs-ds-neutral-800);
-    --fs-ds-theme-muted-text-color: var(--fs-ds-neutral-600);
-    --fs-ds-theme-dark-background-text-color: var(--fs-ds-white-10);
-    --fs-ds-theme-dark-background-muted-text-color: var(--fs-ds-neutral-300);
-    --fs-ds-theme-control-border-color: var(--fs-ds-neutral-200);
-    --fs-ds-theme-control-border-hover-color: var(--fs-ds-neutral-300);
-    --fs-ds-theme-control-border-active-color: var(--fs-ds-theme-primary-accent-color);
-    --fs-ds-theme-control-placeholder-color: var(--fs-ds-neutral-400);
-    --fs-ds-theme-control-background-color: var(--fs-ds-white-10);
-    --fs-ds-theme-control-text-color: var(--fs-ds-theme-text-color);
+    --fs-ds-theme-primary-green-color:        var(--fs-ds-green-500);
+    --fs-ds-theme-primary-red-color:          var(--fs-ds-red-500);
+    --fs-ds-theme-primary-yellow-color:       var(--fs-ds-yellow-500);
+    --fs-ds-theme-error-color:                var(--fs-ds-theme-primary-red-color);
+    --fs-ds-theme-success-color:              var(--fs-ds-theme-primary-green-color);
+    --fs-ds-theme-warn-color:                 var(--fs-ds-theme-primary-yellow-color);
+    --fs-ds-theme-freemius-scale:             var(--fs-ds-freemius-scale);
+    --fs-ds-theme-freemius-grow:              var(--fs-ds-freemius-grow);
+    --fs-ds-theme-freemius-launch:            var(--fs-ds-freemius-launch);
+
+    /* Backgrounds */
+    --fs-ds-theme-background-color:     var(--fs-ds-neutral-10);
+    --fs-ds-theme-background-shade:     var(--fs-ds-neutral-100);
+    --fs-ds-theme-background-accented:  var(--fs-ds-neutral-200);
+    --fs-ds-theme-background-overlay:   rgba(0, 0, 0, .72);
+    --fs-ds-theme-background-dark:      #000000;
+    --fs-ds-theme-background-darkest:   #000000;
+
+    /* Text */
+    --fs-ds-theme-text-color:                    var(--fs-ds-neutral-900);
+    --fs-ds-theme-heading-text-color:             var(--fs-ds-neutral-900);
+    --fs-ds-theme-muted-text-color:               var(--fs-ds-neutral-600);
+    --fs-ds-theme-dark-background-text-color:     var(--fs-ds-neutral-900);
+    --fs-ds-theme-dark-background-muted-text-color: var(--fs-ds-neutral-700);
+
+    /* Controls / inputs */
+    --fs-ds-theme-control-border-color:             var(--fs-ds-neutral-300);
+    --fs-ds-theme-control-border-hover-color:       var(--fs-ds-neutral-400);
+    --fs-ds-theme-control-border-active-color:      var(--fs-ds-theme-primary-accent-color);
+    --fs-ds-theme-control-placeholder-color:        var(--fs-ds-neutral-500);
+    --fs-ds-theme-control-background-color:         var(--fs-ds-neutral-200);
+    --fs-ds-theme-control-text-color:               var(--fs-ds-neutral-900);
     --fs-ds-theme-control-disabled-background-color: var(--fs-ds-neutral-100);
-    --fs-ds-theme-control-disabled-color: var(--fs-ds-neutral-300);
-    --fs-ds-theme-control-readonly-background-color: var(--fs-ds-neutral-10);
-    --fs-ds-theme-control-readonly-color: var(--fs-ds-neutral-600);
-    --fs-ds-theme-divider-color: var(--fs-ds-theme-background-accented);
-    --fs-ds-theme-button-background-color: var(--fs-ds-neutral-100);
+    --fs-ds-theme-control-disabled-color:            var(--fs-ds-neutral-400);
+    --fs-ds-theme-control-readonly-background-color: var(--fs-ds-neutral-100);
+    --fs-ds-theme-control-readonly-color:            var(--fs-ds-neutral-600);
+
+    /* Dividers */
+    --fs-ds-theme-divider-color: var(--fs-ds-neutral-300);
+
+    /* Buttons */
+    --fs-ds-theme-button-background-color:       var(--fs-ds-neutral-200);
     --fs-ds-theme-button-background-hover-color: var(--fs-ds-neutral-300);
-    --fs-ds-theme-button-background-active-color: var(--fs-ds-neutral-200);
-    --fs-ds-theme-button-text-color: var(--fs-ds-theme-heading-text-color);
+    --fs-ds-theme-button-background-active-color: var(--fs-ds-neutral-400);
+    --fs-ds-theme-button-text-color:             var(--fs-ds-neutral-800);
+
+    /* FOMO / urgency */
     --fs-ds-theme-fomo-border-color: var(--fs-ds-red-500);
-    --fs-ds-theme-fomo-text-color: var(--fs-ds-red-500);
-    --fs-ds-theme-fomo-icon-color: var(--fs-ds-red-500);
-    --fs-ds-theme-notice-warn-background: var(--fs-ds-yellow-10);
-    --fs-ds-theme-notice-warn-color: var(--fs-ds-yellow-900);
-    --fs-ds-theme-notice-warn-border: var(--fs-ds-theme-warn-color);
-    --fs-ds-theme-notice-error-background: var(--fs-ds-red-10);
-    --fs-ds-theme-notice-error-color: var(--fs-ds-red-900);
-    --fs-ds-theme-notice-error-border: var(--fs-ds-theme-error-color);
+    --fs-ds-theme-fomo-text-color:   var(--fs-ds-red-600);
+    --fs-ds-theme-fomo-icon-color:   var(--fs-ds-red-500);
+
+    /* Notices */
+    --fs-ds-theme-notice-warn-background:    var(--fs-ds-yellow-10);
+    --fs-ds-theme-notice-warn-color:         var(--fs-ds-yellow-700);
+    --fs-ds-theme-notice-warn-border:        var(--fs-ds-yellow-500);
+    --fs-ds-theme-notice-error-background:   var(--fs-ds-red-10);
+    --fs-ds-theme-notice-error-color:        var(--fs-ds-red-700);
+    --fs-ds-theme-notice-error-border:       var(--fs-ds-red-500);
     --fs-ds-theme-notice-success-background: var(--fs-ds-green-10);
-    --fs-ds-theme-notice-success-color: var(--fs-ds-green-900);
-    --fs-ds-theme-notice-success-border: var(--fs-ds-theme-success-color);
-    --fs-ds-theme-notice-info-background: var(--fs-ds-theme-background-shade);
-    --fs-ds-theme-notice-info-color: var(--fs-ds-theme-primary-accent-color-hover);
-    --fs-ds-theme-notice-info-border: var(--fs-ds-theme-primary-accent-color);
-    --fs-ds-theme-footer-background-color: var(--fs-ds-neutral-800);
-    --fs-ds-theme-footer-text-color: var(--fs-ds-neutral-200);
-    --fs-ds-theme-footer-control-border: var(--fs-ds-neutral-400);
-    --fs-ds-theme-footer-control-border-hover: var(--fs-ds-neutral-300);
-    --fs-ds-theme-footer-control-border-focus: var(--fs-ds-blue-300);
-    --fs-ds-theme-footer-link-color: var(--fs-ds-blue-200);
-    --fs-ds-theme-scrollbar-background: var(--fs-ds-white-10);
-    --fs-ds-theme-scrollbar-thumb-background: var(--fs-ds-neutral-200);
-    --fs-ds-theme-scrollbar-thumb-background-active: var(--fs-ds-neutral-300);
-    --fs-ds-theme-cart-header-background-color: var(--fs-ds-neutral-10);
-    --fs-ds-theme-cart-header-border-color: var(--fs-ds-neutral-200);
+    --fs-ds-theme-notice-success-color:      var(--fs-ds-green-600);
+    --fs-ds-theme-notice-success-border:     var(--fs-ds-green-500);
+    --fs-ds-theme-notice-info-background:    var(--fs-ds-neutral-200);
+    --fs-ds-theme-notice-info-color:         var(--fs-ds-blue-600);
+    --fs-ds-theme-notice-info-border:        var(--fs-ds-blue-500);
+
+    /* Footer */
+    --fs-ds-theme-footer-background-color:        var(--fs-ds-neutral-100);
+    --fs-ds-theme-footer-text-color:              var(--fs-ds-neutral-700);
+    --fs-ds-theme-footer-control-border:          var(--fs-ds-neutral-400);
+    --fs-ds-theme-footer-control-border-hover:    var(--fs-ds-neutral-500);
+    --fs-ds-theme-footer-control-border-focus:    var(--fs-ds-blue-500);
+    --fs-ds-theme-footer-link-color:              var(--fs-ds-blue-600);
+
+    /* Scrollbar */
+    --fs-ds-theme-scrollbar-background:             transparent;
+    --fs-ds-theme-scrollbar-thumb-background:       var(--fs-ds-neutral-300);
+    --fs-ds-theme-scrollbar-thumb-background-active: var(--fs-ds-neutral-400);
+
+    /* Cart header */
+    --fs-ds-theme-cart-header-background-color:               var(--fs-ds-neutral-200);
+    --fs-ds-theme-cart-header-border-color:                   var(--fs-ds-neutral-300);
     --fs-ds-theme-cart-header-product-image-background-color: var(--fs-ds-neutral-300);
-    --fs-ds-theme-cart-header-footer-background-color: var(--fs-ds-neutral-100);
-    --fs-ds-theme-badge-color: var(--fs-ds-neutral-600);
-    --fs-ds-theme-badge-background-color: var(--fs-ds-neutral-100);
-    --fs-ds-theme-switch-background-color: var(--fs-ds-neutral-100);
-    --fs-ds-theme-switch-knob-color: var(--fs-ds-white-10);
-    --fs-ds-theme-switch-border-color: var(--fs-ds-neutral-400);
-    --fs-ds-theme-upsell-text-color: var(--fs-ds-neutral-500);
-    --fs-ds-theme-review-star-color: var(--fs-ds-yellow-500);
-    --fs-ds-theme-signal-bar-background-color: var(--fs-ds-neutral-200);
-    --fs-ds-theme-signal-bar-button-background-color: var(--fs-ds-neutral-300);
-    --fs-ds-theme-signal-bar-close-button-background-color: var(--fs-ds-theme-primary-red-color);
+    --fs-ds-theme-cart-header-footer-background-color:        var(--fs-ds-neutral-100);
+
+    /* Badges */
+    --fs-ds-theme-badge-color:            var(--fs-ds-neutral-700);
+    --fs-ds-theme-badge-background-color: var(--fs-ds-neutral-300);
+
+    /* Toggle switch */
+    --fs-ds-theme-switch-background-color: var(--fs-ds-neutral-400);
+    --fs-ds-theme-switch-knob-color:       var(--fs-ds-neutral-900);
+    --fs-ds-theme-switch-border-color:     var(--fs-ds-neutral-400);
+
+    /* Misc */
+    --fs-ds-theme-upsell-text-color:    var(--fs-ds-neutral-600);
+    --fs-ds-theme-review-star-color:    var(--fs-ds-yellow-500);
+
+    /* Signal bar */
+    --fs-ds-theme-signal-bar-background-color:              var(--fs-ds-neutral-200);
+    --fs-ds-theme-signal-bar-button-background-color:       var(--fs-ds-neutral-300);
+    --fs-ds-theme-signal-bar-close-button-background-color: var(--fs-ds-red-400);
     --fs-ds-theme-signal-bar-expand-button-background-color: var(--fs-ds-theme-primary-accent-color);
-    --fs-ds-theme-promotion-background-color: var(--fs-ds-neutral-100);
-    --fs-ds-box-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .05);
-    --fs-ds-box-shadow-regular: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px -1px rgba(0, 0, 0, .1);
-    --fs-ds-box-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);
-    --fs-ds-box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -4px rgba(0, 0, 0, .1);
-    --fs-ds-box-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 8px 10px -6px rgba(0, 0, 0, .1);
-    --fs-ds-box-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, .25);
-    --fs-ds-box-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, .05);
+
+    /* Promotion */
+    --fs-ds-theme-promotion-background-color: var(--fs-ds-neutral-200);
+
+    /* ── Elevation / shadows ─────────────────────────────────
+       Dark UI shadows use deep blacks + subtle glow rings
+       rather than warm grey drops.
+    ─────────────────────────────────────────────────────── */
+    --fs-ds-box-shadow-sm:
+        0 1px 2px rgba(0, 0, 0, .4);
+    --fs-ds-box-shadow-regular:
+        0 1px 3px rgba(0, 0, 0, .5),
+        0 1px 2px rgba(0, 0, 0, .4);
+    --fs-ds-box-shadow-md:
+        0 4px 12px rgba(0, 0, 0, .45),
+        0 2px 4px  rgba(0, 0, 0, .35);
+    --fs-ds-box-shadow-lg:
+        0 12px 32px rgba(0, 0, 0, .55),
+        0  4px  8px rgba(0, 0, 0, .4);
+    --fs-ds-box-shadow-xl:
+        0 24px 48px rgba(0, 0, 0, .65),
+        0  8px 16px rgba(0, 0, 0, .45);
+    --fs-ds-box-shadow-2xl:
+        0 40px 80px rgba(0, 0, 0, .75);
+    --fs-ds-box-shadow-inner:
+        inset 0 1px 3px rgba(0, 0, 0, .5),
+        inset 0 0  0 1px rgba(255, 255, 255, .03);
     --fs-ds-box-shadow-none: 0 0 #0000;
-    --fs-ds-box-shadow-control: 0 1px 2px 0 var(--fs-ds-neutral-900-fade-92);
-    --fs-ds-box-shadow-control-active: 0 1px 2px 0 var(--fs-ds-neutral-900-fade-92), 0 0 0 1px var(--fs-ds-theme-primary-accent-color);
-    --fs-ds-box-shadow-footer: 0 -20px 25px 5px rgba(0, 0, 0, .1), 0 -8px 10px -6px rgba(0, 0, 0, .25), 0 0 10px -2px rgba(0, 0, 0, .25);
-    --fs-ds-box-shadow-dropdown: 0 20px 25px -5px rgba(0, 0, 0, .15), 0 8px 10px -6px rgba(0, 0, 0, .15), 0 -4px 10px -6px rgba(0, 0, 0, .15), 0 0 5px 1px rgba(0, 0, 0, .1);
-    --fs-ds-box-shadow-switch-knob: 0 2px 2px #070f114d;
-    --fs-ds-box-shadow-switch-active: 0 0 0 2px var(--fs-ds-theme-background-color), 0 0 0 4px var(--fs-ds-theme-primary-accent-color);
+
+    /* Input ring (unfocused → focused) */
+    --fs-ds-box-shadow-control:
+        0 1px 2px rgba(0, 0, 0, .5),
+        inset 0 0 0 1px var(--fs-ds-neutral-300);
+    --fs-ds-box-shadow-control-active:
+        0 0 0 2px rgba(99, 102, 241, .22),
+        0 0 0 1px var(--fs-ds-blue-500),
+        0 1px 2px rgba(0, 0, 0, .5);
+
+    /* Footer lift */
+    --fs-ds-box-shadow-footer:
+        0 -1px 0 var(--fs-ds-neutral-300),
+        0 -16px 32px rgba(0, 0, 0, .5);
+
+    /* Dropdown float */
+    --fs-ds-box-shadow-dropdown:
+        0 0  0 1px var(--fs-ds-neutral-300),
+        0 8px 24px rgba(0, 0, 0, .55),
+        0 2px  6px rgba(0, 0, 0, .4);
+
+    /* Toggle knob */
+    --fs-ds-box-shadow-switch-knob:
+        0 1px 3px rgba(0, 0, 0, .6);
+    --fs-ds-box-shadow-switch-active:
+        0 0 0 2px var(--fs-ds-neutral-10),
+        0 0 0 4px var(--fs-ds-theme-primary-accent-color);
 }
